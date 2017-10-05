@@ -24,6 +24,8 @@ Place the following code in your html to enable the livereload:
 
 You can change the livereload port on the `conf.json` file.
 
+Please note that only the files inside `src/js` and `src/css` will be taken as main entries to be compiled. Any other file inside subfolders will not be compiled, but the watch task will always listen for changes in them.
+
 
 - - -
 

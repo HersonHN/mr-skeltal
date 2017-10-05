@@ -15,7 +15,7 @@ Mr. Skeltal lives in your assets folder, that's where he belongs.
 git clone git@github.com:HersonHN/mr-skeltal.git assets
 cd assets
 npm install
-sh run-once-installed.sh # this is optional
+sh run-once-installed.sh
 ```
 
 ### Usage:

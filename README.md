@@ -3,9 +3,11 @@ thank mr skeltal
 
 ![](https://i.imgur.com/hoDrij8.gif)
 
-Mr. Skeltal is a skeleton for ES2015 applications using `gulp` and `webpack`, it also bundles `sass` for the stylesheets and `livereload` for, you know, live reload.
+Mr. Skeltal is a skeleton for ES6 applications using `gulp` and `webpack`, it also bundles `sass` for the stylesheets and `livereload` for, you know, live reload.
 
-It doesn't include configurations for html templates or live server, because is meant to be used with any backend platform (express, django, wordpress), so it only handles the compilation for scripts assets.
+It doesn't include configurations for html templates or live server, because is meant to be used with any backend platform (express, django, wordpress), so it only handles the compilation for javascript and css files.
+
+Mr. Skeltal, lives in your assets folder, that's where he belongs.
 
 ### Install:
 

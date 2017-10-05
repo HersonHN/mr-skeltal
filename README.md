@@ -7,7 +7,7 @@ Mr. Skeltal is a skeleton for ES6 applications using `gulp` and `webpack`, it al
 
 It doesn't include configurations for html templates or live server, because is meant to be used with any backend platform (express, django, wordpress), so it only handles the compilation for javascript and css files.
 
-Mr. Skeltal, lives in your assets folder, that's where he belongs.
+Mr. Skeltal lives in your assets folder, that's where he belongs.
 
 ### Install:
 

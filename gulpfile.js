@@ -2,8 +2,7 @@
 
 const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
-const changed = require('gulp-changed');
-const composer  = require('gulp-uglify/composer');
+const composer = require('gulp-uglify/composer');
 const gulpWebpack = require('gulp-webpack');
 const livereload = require('gulp-livereload');
 const plumber = require('gulp-plumber');
@@ -23,21 +22,21 @@ function js() {
 }
 
 
-gulp.task('js', function() {
+gulp.task('js', function () {
   return js()
     .pipe(gulp.dest('./build/js'))
     .pipe(livereload());
 });
 
 
-gulp.task('js:prod', function() {
+gulp.task('js:prod', function () {
   return js()
     .pipe(minify())
-    .pipe(gulp.dest('./build/js'))
+    .pipe(gulp.dest('./build/js'));
 });
 
 
-gulp.task('css', function() {
+gulp.task('css', function () {
   return gulp
     .src('./src/scss/*.scss')
     .pipe(plumber())
@@ -52,7 +51,7 @@ gulp.task('css', function() {
 });
 
 
-gulp.task('watch:css', function() {
+gulp.task('watch:css', function () {
   livereload.listen(conf.livereload);
 
   gulp.watch('./src/scss/**/*.scss', ['css']);
@@ -60,7 +59,7 @@ gulp.task('watch:css', function() {
 });
 
 
-gulp.task('watch:js', function() {
+gulp.task('watch:js', function () {
   livereload.listen(conf.livereload);
 
   gulp.watch('./src/js/**/*.js', ['js']);
@@ -71,4 +70,3 @@ gulp.task('watch:js', function() {
 gulp.task('watch', ['watch:css', 'watch:js']);
 gulp.task('prod', ['css', 'js:prod']);
 gulp.task('default', ['css', 'js', 'watch']);
-

@@ -9,6 +9,7 @@ It doesn't include configurations for html templates or live server, because is 
 
 Mr. Skeltal lives in your assets folder, that's where he belongs.
 
+
 ### Install:
 
 ```bash
@@ -18,6 +19,7 @@ npm install
 sh run-once-installed.sh
 ```
 
+
 ### Usage:
 
 - `gulp` compiles everything and keeps looking for changes.
@@ -26,7 +28,8 @@ sh run-once-installed.sh
 - `gulp watch` doesn't compile at the start, but keeps looking for changes.
 - `gulp prod` compiles and minify the css and javascript.
 
-### Reminder:
+
+### Live Reload:
 
 Place the following code in your html to enable the livereload:
 ```html
@@ -34,6 +37,9 @@ Place the following code in your html to enable the livereload:
 ```
 
 You can change the livereload port on the `conf.json` file.
+
+
+### Reminder:
 
 Please note that only the files inside `src/js` and `src/css` will be taken as main entries to be compiled. Any other file inside their subfolders will not be compiled, but the watch task will always listen for changes in them.
 

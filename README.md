@@ -7,6 +7,15 @@ Mr. Skeltal is a skeleton for ES2015 applications using `gulp` and `webpack`, it
 
 It doesn't include configurations for html templates or live server, because is meant to be used with any backend platform (express, django, wordpress), so it only handles the compilation for scripts assets.
 
+### Install:
+
+```bash
+git clone git@github.com:HersonHN/mr-skeltal.git assets
+cd assets
+npm install
+sh run-once-installed.sh # this is optional
+```
+
 ### Usage:
 
 - `gulp` compiles everything and keeps looking for changes.

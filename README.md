@@ -15,6 +15,18 @@ It doesn't include configurations for html templates or live server, because is 
 - `gulp watch` doesn't compile at the start, but keeps looking for changes.
 - `gulp prod` compiles and minify the css and javascript.
 
+### Reminder:
+
+Place the following code in your html to enable the livereload:
+```html
+<script src="http://localhost:4011/livereload.js"></script>
+```
+
+You can change the livereload port on the `conf.json` file.
+
+Please note that only the files inside `src/js` and `src/css` will be taken as main entries to be compiled. Any other file inside their subfolders will not be compiled, but the watch task will always listen for changes in them.
+
+
 - - -
 
 May good bones and calcium come to you. 🎺💀

@@ -1,0 +1,32 @@
+{
+  "name": "mr-skeltal",
+  "version": "1.0.0",
+  "description": "doot doot",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HersonHN/mr-skeltal.git"
+  },
+  "author": "Herson Salinas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HersonHN/mr-skeltal/issues"
+  },
+  "homepage": "https://github.com/HersonHN/mr-skeltal#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-changed": "^3.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-webpack": "^1.5.0",
+    "uglify-es": "^3.1.3",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^3.6.0"
+  }
+}

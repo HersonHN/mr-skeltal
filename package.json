@@ -1,0 +1,19 @@
+{
+  "name": "mr-skeltal",
+  "version": "1.0.0",
+  "description": "doot doot",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HersonHN/mr-skeltal.git"
+  },
+  "author": "Herson Salinas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HersonHN/mr-skeltal/issues"
+  },
+  "homepage": "https://github.com/HersonHN/mr-skeltal#readme"
+}

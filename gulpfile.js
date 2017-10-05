@@ -12,7 +12,6 @@ const named = require('vinyl-named');
 const uglifyES = require('uglify-es');
 const webpack = require('webpack');
 
-
 const conf = require('./conf.json');
 const minify = composer(uglifyES, console);
 

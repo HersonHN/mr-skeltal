@@ -1,11 +1,5 @@
 
 // This app.js is just an example script using ES6
 
-class ExampleClass {
-  constructor(param) {
-    console.log(param);
-  }
-}
-
+import ExampleClass from './classes/example-class';
 new ExampleClass('hello world');
-

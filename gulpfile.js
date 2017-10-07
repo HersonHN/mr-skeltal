@@ -16,6 +16,7 @@ const minify = composer(uglifyES, console);
 
 
 function js() {
+  // unlike the css task, this will break if the src/js/ folder is empty
   return gulp.src(['./src/js/*.js'])
     .pipe(named())
     .pipe(gulpWebpack({ output: { filename: '[name].js' } }, webpack));

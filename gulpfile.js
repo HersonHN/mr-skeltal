@@ -21,7 +21,17 @@ function js() {
   // unlike the css task, this will break if the src/js/ folder is empty
   return gulp.src([path.js.files])
     .pipe(named())
-    .pipe(gulpWebpack({ output: { filename: '[name].js' } }, webpack));
+    .pipe(gulpWebpack({
+      output: {
+        filename: '[name].js'
+      },
+      module: {
+        rules: [
+          { use: 'raw-loader', test: /\.txt$/ },
+          { use: 'raw-loader', test: /\.html$/ }
+        ]
+      }
+    }, webpack));
 }
 
 

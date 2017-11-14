@@ -7,6 +7,7 @@ const gulpWebpack = require('gulp-webpack');
 const livereload = require('gulp-livereload');
 const plumber = require('gulp-plumber');
 const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
 const named = require('vinyl-named');
 const uglifyES = require('uglify-es');
 const webpack = require('webpack');
@@ -41,14 +42,27 @@ gulp.task('css', function () {
   return gulp
     .src('./src/scss/*.scss')
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(sass({
-      outputStyle: 'compressed',
-      // including node modules in case of using bootstrap or foundation
       includePaths: ['./node_modules']
     }))
     .pipe(autoprefixer())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/css'))
     .pipe(livereload());
+});
+
+
+gulp.task('css:prod', function () {
+  return gulp
+    .src('./src/scss/*.scss')
+    .pipe(plumber())
+    .pipe(sass({
+      outputStyle: 'compressed',
+      includePaths: ['./node_modules']
+    }))
+    .pipe(autoprefixer())
+    .pipe(gulp.dest('./build/css'));
 });
 
 
@@ -69,5 +83,5 @@ gulp.task('watch:js', function () {
 
 
 gulp.task('watch', ['watch:css', 'watch:js']);
-gulp.task('prod', ['css', 'js:prod']);
+gulp.task('prod', ['css:prod', 'js:prod']);
 gulp.task('default', ['css', 'js', 'watch']);

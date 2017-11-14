@@ -1,5 +1,27 @@
 {
+
+  "path": {
+
+    "css": {
+      "src": "./src/scss",
+      "files": "./src/scss/*.scss",
+      "filesInFolders": "./src/scss/**/*.scss",
+      "dest": "./build/css",
+      "prod": "./build/css"
+    },
+
+    "js": {
+      "src": "./src/js",
+      "files": "./src/js/*.js",
+      "filesInFolders": "./src/js/**/*.js",
+      "dest": "./build/js",
+      "prod": "./build/js"
+    }
+
+  },
+
   "livereload": {
     "port": 4011
   }
+
 }

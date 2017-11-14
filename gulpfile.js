@@ -12,13 +12,14 @@ const named = require('vinyl-named');
 const uglifyES = require('uglify-es');
 const webpack = require('webpack');
 
-const conf = require('./conf.json');
 const minify = composer(uglifyES, console);
+const conf = require('./conf.json');
+const path = conf.path;
 
 
 function js() {
   // unlike the css task, this will break if the src/js/ folder is empty
-  return gulp.src(['./src/js/*.js'])
+  return gulp.src([path.js.files])
     .pipe(named())
     .pipe(gulpWebpack({ output: { filename: '[name].js' } }, webpack));
 }
@@ -26,7 +27,7 @@ function js() {
 
 gulp.task('js', function () {
   return js()
-    .pipe(gulp.dest('./build/js'))
+    .pipe(gulp.dest(path.js.dest))
     .pipe(livereload());
 });
 
@@ -34,13 +35,13 @@ gulp.task('js', function () {
 gulp.task('js:prod', function () {
   return js()
     .pipe(minify())
-    .pipe(gulp.dest('./build/js'));
+    .pipe(gulp.dest(path.js.prod));
 });
 
 
 gulp.task('css', function () {
   return gulp
-    .src('./src/scss/*.scss')
+    .src(path.css.files)
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -48,37 +49,37 @@ gulp.task('css', function () {
     }))
     .pipe(autoprefixer())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./build/css'))
+    .pipe(gulp.dest(path.css.dest))
     .pipe(livereload());
 });
 
 
 gulp.task('css:prod', function () {
   return gulp
-    .src('./src/scss/*.scss')
+    .src(path.css.files)
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed',
       includePaths: ['./node_modules']
     }))
     .pipe(autoprefixer())
-    .pipe(gulp.dest('./build/css'));
+    .pipe(gulp.dest(path.css.prod));
 });
 
 
 gulp.task('watch:css', function () {
   livereload.listen(conf.livereload);
 
-  gulp.watch('./src/scss/**/*.scss', ['css']);
-  gulp.watch('./src/scss/*.scss', ['css']);
+  gulp.watch(path.css.files, ['css']);
+  gulp.watch(path.css.filesInFolders, ['css']);
 });
 
 
 gulp.task('watch:js', function () {
   livereload.listen(conf.livereload);
 
-  gulp.watch('./src/js/**/*.js', ['js']);
-  gulp.watch('./src/js/*.js', ['js']);
+  gulp.watch(path.js.files, ['js']);
+  gulp.watch(path.js.filesInFolders, ['js']);
 });
 
 
